@@ -6,16 +6,18 @@
         <div class="card-body">
             <h1 class="mt4">出来事の新規投稿</h1>
             {{--エラーメッセージ--}}
+            @if($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                     @endforeach
-                    @if(empty($errors->first('image')))
+                    <!-- @if(empty($errors->first('image')))
                     <li>画像ファイルがあれば、再度、選択してください。</li>
-                    @endif
+                    @endif -->
                 </ul>
             </div>
+            @endif
             @if(session('message'))
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
@@ -32,7 +34,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="image">添付画像の選択 </label>
+                    <label for="image">添付画像の選択（1MBまで） </label>
                     <div class="col-md-6">
                         <input id="image" type="file" name="image">
                     </div>
