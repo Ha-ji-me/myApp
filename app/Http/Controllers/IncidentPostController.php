@@ -87,9 +87,27 @@ class IncidentPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, IncidentPost $incidentPost)
     {
-        //
+        $inputs=$request->validate([
+            'title'=>'required|max:50',
+            'body'=>'required|max:1500',
+            'image'=>'image|max:1024'
+        ]);
+
+        $incidentPost->title=$inputs['title'];
+        $incidentPost->body=$inputs['body'];
+
+        if(request('image')){
+            $original=request()->file('image')->getClientOriginalName();
+            $name=date('Ymd_His').'_'.$original;
+            $file=request()->file('image')->move('storage/images', $name);
+            $incidentPost->image=$name;
+        }
+
+        $incidentPost->save();
+
+        return back()->with('message', '投稿を更新しました');
     }
 
     /**

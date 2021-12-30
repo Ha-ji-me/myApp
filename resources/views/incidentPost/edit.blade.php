@@ -22,8 +22,9 @@
             <div class="alert alert-success">{{session('message')}}</div>
             @endif
 
-            <form method="post" action="{{'incident-post.store'}}" enctype="multipart/form-data">
+            <form method="post" action="{{route('incident-post.update',$incidentPost)}}" enctype="multipart/form-data">
                 @csrf
+                @method('put')
                 <div class="form-group">
                     <label for="title">タイトル</label>
                     <input type="text" name="title" class="form-control" id="title" value="{{old('title', $incidentPost->title)}}" placeholder="Enter Title">
