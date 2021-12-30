@@ -5,16 +5,16 @@
     <div class="col-md-10 mt-6">
         <div class="card-body">
             <h1 class="mt4">出来事の新規投稿</h1>
-            {{--エラーメッセージ--}}
+            <!-- {{--エラーメッセージ--}} -->
             @if($errors->any())
             <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>
                     @endforeach
-                    <!-- @if(empty($errors->first('image')))
+                    @if(empty($errors->first('image')))
                     <li>画像ファイルがあれば、再度、選択してください。</li>
-                    @endif -->
+                    @endif
                 </ul>
             </div>
             @endif
@@ -23,6 +23,7 @@
             @endif
             <form method="post" action="{{route('incident-post.store')}}" enctype="multipart/form-data">
             @csrf
+            <!-- {{--各項目はold関数で値を残したままエラーを吐きます--}} -->
                 <div class="form-group">
                     <label for="title">タイトル</label>
                     <input type="text" name="title" class="form-control" id="title" value="{{old('title')}}" placeholder="Enter Title">
