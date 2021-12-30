@@ -116,8 +116,9 @@ class IncidentPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(IncidentPost $incidentPost)
     {
-        //
+        $incidentPost->delete();
+        return redirect()->route('home')->with('message', '投稿を削除しました');
     }
 }
