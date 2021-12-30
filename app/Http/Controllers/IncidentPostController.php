@@ -40,11 +40,19 @@ class IncidentPostController extends Controller
             'body'=>'required|max:1500',
             'image'=>'image|max:1024'
         ]);
-        //
+
         $incidentPost=new IncidentPost();
         $incidentPost->title = $inputs['title'];
         $incidentPost->body = $inputs['body'];
         $incidentPost->user_id = auth()->user()->id;
+
+        if(request('image')){
+            //画像に日時情報を付与して保存
+            $original = request()->file('image')->getClientOriginalName();
+            $name = date('Ymd_His').'_'.$original;
+            request()->file('image')->move('storage/images',$name);
+            $incidentPost->image = $name;
+        }
         $incidentPost->save();
         return back()->with('message','投稿を作成しました！');
 
@@ -56,9 +64,9 @@ class IncidentPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(IncidentPost $incidentPost)
     {
-        //
+        return view('incidentPost.show',compact('incidentPost'));
     }
 
     /**
@@ -67,9 +75,9 @@ class IncidentPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(IncidentPost $incidentPost)
     {
-        //
+        return view('incidentPost.edit',compact('incidentPost'));
     }
 
     /**
