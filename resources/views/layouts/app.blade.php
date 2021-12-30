@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- fontawesome6でアイコン取得 -->
+    <script src="https://kit.fontawesome.com/1646a14d8e.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/forum.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -73,7 +76,16 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-3">
+                    @include('layouts.sidebar')
+                    </div>
+                    <div class="col-12 col-md-8  col-lg-9">
+                    @yield('content')
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 </body>
