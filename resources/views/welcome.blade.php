@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    あ　か　ぎ
+                    あかぎmyApp
                 </div>
 
                 <div class="links">
