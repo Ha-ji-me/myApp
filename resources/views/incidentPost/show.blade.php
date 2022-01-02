@@ -43,7 +43,37 @@
     </div>
 </div>
 
+<!-- 以下コメント機能周り -->
+<hr>
+@if ($incidentPost->comments)
+@foreach ($incidentPost->comments as $comment)
+<div class="card mb-4">
 
+    <div class="card-header">
+        {{$comment->user->name}}
+    </div>
+    <div class="card-body">
+        {{$comment->body}}
+    </div>
+    <div class="card-footer">
+        <span class="mr-2 float-right">
+            投稿日時 {{$comment->created_at->diffForHumans()}}
+        </span>
+    </div>
+</div>
+@endforeach
+@endif
+
+<!-- バリデーションエラー表示 -->
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 <!-- コメント投稿フォーム -->
 <div class="card mb-4">
