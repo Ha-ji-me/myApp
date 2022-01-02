@@ -43,4 +43,21 @@
     </div>
 </div>
 
+
+
+<!-- コメント投稿フォーム -->
+<div class="card mb-4">
+    <form method="post" action="{{route('comment.store')}}">
+        @csrf
+        <input type="hidden" name='incident_post_id' value="{{$incidentPost->id}}">
+        <div class="form-group">
+            <textarea name="body" class="form-control" id="body" cols="30" rows="5"
+            placeholder="コメントを入力する">{{old('body')}}</textarea>
+        </div>
+        <div class="form-group">
+        <button class="btn btn-success float-right mb-3 mr-3">コメントする</button>
+        </div>
+    </form>
+</div>
+
 @endsection
