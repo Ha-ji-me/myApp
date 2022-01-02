@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    あ か ぎ
+                    偽　あ　か　ぎ
                 </div>
 
                 <div class="links">
