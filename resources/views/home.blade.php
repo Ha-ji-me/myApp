@@ -5,11 +5,12 @@
 <div class="alert alert-success">{{session('message')}}</div>
 @endif
 
-<div class="ml-2 mb-3">
+<!-- <div class="ml-2 mb-3">
     home
-</div>
+</div> -->
 
-<h1>{{$user->name}}さんも投稿しましょう！</h1>
+<h4>{{$user->name}}さんも投稿を共有しましょう！</h4>
+
 @foreach ($incidentPosts as $incidentPost)
 <div class="container-fluid mt-20" style="margin-left:-10px;">
     <div class="row">
@@ -31,7 +32,24 @@
                 </div>
                 <div class="card-body">
                     <!-- 記事内容 -->
-                    <p> {{$incidentPost->body}} </p>
+                    <!-- 表示文字数を制限 -->
+                    <p> {{ Str::limit($incidentPost->body,100,'...') }} </p>
+                </div>
+                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                    <div class="px-4 pt-3">
+                        @if($incidentPost->comments->count())
+                        <span class="badge badge-success">
+                            コメント{{$incidentPost->comments->count()}}件
+                        </span>
+                        @else
+                        <span class="badge badge-secondary">コメント0件</span>
+                        @endif
+                    </div>
+                    <div class="px-4 pt-3">
+                        <button type="button" class="btn btn-primary">
+                            <a href="{{route('incident-post.show',$incidentPost)}}" style="color:white;">コメントする</a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
