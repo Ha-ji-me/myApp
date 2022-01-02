@@ -28,3 +28,5 @@ Route::resource('/incident-post', 'IncidentPostController');
 // Route::get('/post/{post}/edit', 'PostController@edit')->name('post.edit');
 // Route::patch('/post/{post}', 'PostController@update')->name('post.update');
 // Route::delete('/post/{post}', 'PostController@destroy')->name('post.destroy');
+
+Route::post('/incident-post/comment/store','CommentController@store')->name('comment.store');
