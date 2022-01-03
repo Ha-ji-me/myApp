@@ -118,6 +118,8 @@ class IncidentPostController extends Controller
      */
     public function destroy(IncidentPost $incidentPost)
     {
+        //投稿記事に加え、コメントも同時に削除
+        $incidentPost->comments()->delete();
         $incidentPost->delete();
         return redirect()->route('home')->with('message', '投稿を削除しました');
     }
