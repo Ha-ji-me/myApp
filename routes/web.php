@@ -30,3 +30,4 @@ Route::resource('/incident-post', 'IncidentPostController');
 // Route::delete('/post/{post}', 'PostController@destroy')->name('post.destroy');
 
 Route::post('/incident-post/comment/store','CommentController@store')->name('comment.store');
+Route::get('/my-post','HomeController@myPost')->name('home.myPost');
