@@ -9,7 +9,7 @@
     home
 </div> -->
 
-<h4>{{$user->name}}さんも投稿しましょう！</h4>
+<h4>{{$user->name}}さんも投稿を共有しましょう！</h4>
 
 @foreach ($incidentPosts as $incidentPost)
 <div class="container-fluid mt-20" style="margin-left:-10px;">
