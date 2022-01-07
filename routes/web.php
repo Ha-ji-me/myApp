@@ -32,3 +32,6 @@ Route::resource('/incident-post', 'IncidentPostController');
 Route::post('/incident-post/comment/store','CommentController@store')->name('comment.store');
 Route::get('/my-post','HomeController@myPost')->name('home.myPost');
 Route::get('/my-comment','HomeController@myComment')->name('home.myComment');
+
+Route::get('/contact/create','ContactController@create')->name('contact.create');
+Route::post('/contact/store','ContactController@store')->name('contact.store');
