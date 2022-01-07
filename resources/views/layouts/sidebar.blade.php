@@ -13,4 +13,10 @@
     class="list-group-item {{url()->current()==route('home.myPost')?'active':''}}">
         <i class="fas fa-user-edit pr-2"></i><span>自分の投稿</span>
     </a>
+
+    <a href="{{route('home.myComment')}}"
+    class="list-group-item {{url()->current()==route('home.myComment')?'active':''}}">
+        <i class="fas fa-user-edit pr-2"></i><span>コメントした投稿</span>
+    </a>
+
 </div>
