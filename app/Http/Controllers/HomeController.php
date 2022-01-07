@@ -32,4 +32,13 @@ class HomeController extends Controller
 
         // return view('home');
     }
+
+    public function myPost()
+    {
+        //新しい順に表示
+        $user=auth()->user()->id;
+        $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->get();
+        return view('myPost',compact('incidentPosts'));
+    }
+
 }
