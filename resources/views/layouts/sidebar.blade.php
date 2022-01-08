@@ -19,4 +19,9 @@
         <i class="fas fa-user-edit pr-2"></i><span>コメントした投稿</span>
     </a>
 
+    <a href="{{route('profile.index')}}"
+    class="list-group-item {{url()->current()==route('profile.index')?'active':''}}">
+        <i class="fas fa-user-edit pr-2"></i><span>ユーザーアカウント</span>
+    </a>
+
 </div>
