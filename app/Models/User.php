@@ -39,12 +39,20 @@ class User extends Authenticatable
 
 
     //出来事投稿情報と紐づく
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany('App\Models\IncidentPost');
     }
 
-    public function comments(){
+    public function comments()
+    {
         return $this->hasMany('App\Models\Comment');
+    }
+
+    //Roleと紐づく
+    public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role');
     }
 
 }
