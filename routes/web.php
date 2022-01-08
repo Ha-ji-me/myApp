@@ -42,3 +42,5 @@ Route::get('/my-comment','HomeController@myComment')->name('home.myComment');
 //お問い合わせ関連
 Route::get('/contact/create','ContactController@create')->name('contact.create');
 Route::post('/contact/store','ContactController@store')->name('contact.store');
+//管理者用ユーザー一覧
+Route::get('/profile/index','ProfileController@index')->name('profile.index');
