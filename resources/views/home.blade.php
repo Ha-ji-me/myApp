@@ -47,7 +47,7 @@
                     </div>
                     <div class="px-4 pt-3">
                         <button type="button" class="btn btn-primary">
-                            <a href="{{route('incident-post.show',$incidentPost)}}" style="color:white;">コメントする</a>
+                            <a href="{{route('incident-post.show',$incidentPost)}}" style="color:white;">詳細を見る</a>
                         </button>
                     </div>
                 </div>

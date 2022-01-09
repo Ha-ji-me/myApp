@@ -83,7 +83,7 @@
                     @include('layouts.sidebar')
                     </div>
                     <div class="col-12 col-md-8  col-lg-9">
-                    {{-- エラーメッセージ表示 --}}
+                    <!-- -- エラーメッセージ表示 -- -->
                     @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
