@@ -16,9 +16,10 @@
 // });
 
 Auth::routes();
+//トップページ（ログインユーザー移動できず）
 Route::get('/',function(){
     return view('auth.login');
-});
+})->middleware('guest');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
