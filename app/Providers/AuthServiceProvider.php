@@ -24,7 +24,14 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+        //ユーザー情報一覧に権限を付与
+        Gate::define('admin',function($user) {
+            foreach($user->roles as $role) {
+                if($role->name == 'admin') {
+                    return true;
+                }
+            }
+            return false;
+        });
     }
 }
