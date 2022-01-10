@@ -6,51 +6,18 @@ use App\Models\IncidentPost;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-//リソースコントローラーのメソッドに対応
+
 class IncidentPostPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can view any incident posts.
-     *
-     * @param  \App\Models\User  $user
-     * @return mixed
-     */
-    public function viewAny(User $user)
-    {
-        //
-    }
 
     /**
-     * Determine whether the user can view the incident post.
+     * 権限を持ったユーザーのみ投稿編集が可能
      *
      * @param  \App\Models\User  $user
      * @param  \App\IncidentPost  $incidentPost
-     * @return mixed
-     */
-    public function view(User $user, IncidentPost $incidentPost)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can create incident posts.
-     *
-     * @param  \App\Models\User  $user
-     * @return mixed
-     */
-    public function create(User $user)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can update the incident post.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\IncidentPost  $incidentPost
-     * @return mixed
+     * @return boolean
      */
     public function update(User $user, IncidentPost $incidentPost)
     {
@@ -58,11 +25,12 @@ class IncidentPostPolicy
     }
 
     /**
-     * Determine whether the user can delete the incident post.
+     * 権限を持った者のみ投稿削除が可能
+     *
      *
      * @param  \App\Models\User  $user
      * @param  \App\IncidentPost  $incidentPost
-     * @return mixed
+     * @return boolean
      */
     public function delete(User $user, IncidentPost $incidentPost)
     {
@@ -80,27 +48,4 @@ class IncidentPostPolicy
         return false;
     }
 
-    /**
-     * Determine whether the user can restore the incident post.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\IncidentPost  $incidentPost
-     * @return mixed
-     */
-    public function restore(User $user, IncidentPost $incidentPost)
-    {
-        //
-    }
-
-    /**
-     * Determine whether the user can permanently delete the incident post.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\IncidentPost  $incidentPost
-     * @return mixed
-     */
-    public function forceDelete(User $user, IncidentPost $incidentPost)
-    {
-        //
-    }
 }
