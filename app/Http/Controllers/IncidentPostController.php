@@ -7,6 +7,11 @@ use App\Models\IncidentPost;
 
 class IncidentPostController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->authorizeResource(IncidentPost::class, 'incidentPost');
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -77,6 +82,8 @@ class IncidentPostController extends Controller
      */
     public function edit(IncidentPost $incidentPost)
     {
+        $this->authorize('update', $incidentPost);
+
         return view('incidentPost.edit',compact('incidentPost'));
     }
 
@@ -89,6 +96,8 @@ class IncidentPostController extends Controller
      */
     public function update(Request $request, IncidentPost $incidentPost)
     {
+        $this->authorize('update', $incidentPost);
+
         $inputs=$request->validate([
             'title'=>'required|max:50',
             'body'=>'required|max:1500',
@@ -118,6 +127,8 @@ class IncidentPostController extends Controller
      */
     public function destroy(IncidentPost $incidentPost)
     {
+        $this->authorize('delete',$incidentPost);
+
         //投稿記事に加え、コメントも同時に削除
         $incidentPost->comments()->delete();
         $incidentPost->delete();
