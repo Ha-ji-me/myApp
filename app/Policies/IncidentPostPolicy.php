@@ -21,7 +21,7 @@ class IncidentPostPolicy
      */
     public function update(User $user, IncidentPost $incidentPost)
     {
-        return $user->id==$incidentPost->user_id;
+        return $user->id === $incidentPost->user_id;
     }
 
     /**
@@ -35,12 +35,12 @@ class IncidentPostPolicy
     public function delete(User $user, IncidentPost $incidentPost)
     {
         //作成者は削除可能
-        if ($user->id==$incidentPost->user_id) {
+        if ($user->id === $incidentPost->user_id) {
             return true;
         }
         //管理者は削除可能
         foreach ($user->roles as $role) {
-            if ($role->name=='admin') {
+            if ($role->name === 'admin') {
                 return true;
             }
         }
