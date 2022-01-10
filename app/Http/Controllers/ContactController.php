@@ -17,9 +17,9 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $inputs = request()->validate([
-            'title'=>'required|max:255',
-            'email'=>'required|max:255',
-            'body'=>'required',
+            'title' => 'required|max:255',
+            'email' => 'required|max:255',
+            'body' => 'required',
         ]);
 
         $contact = new Contact();
@@ -31,6 +31,6 @@ class ContactController extends Controller
         // Mail::to(config('mail.admin'))->send(new ContactForm($contact));
         // Mail::to($contact['email'])->send(new ContactForm($contact));
 
-        return back()->with('message','メールを送信しました。');
+        return back()->with('message', 'メールを送信しました。');
     }
 }

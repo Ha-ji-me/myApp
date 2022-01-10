@@ -13,11 +13,13 @@ class Comment extends Model
     //     'incident_post_id'
     // ];
 
-    public function IncidentPost(){
+    public function IncidentPost()
+    {
         return $this->belongsTo('App\Models\IncidentPost');
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\Models\user');
     }
 }
