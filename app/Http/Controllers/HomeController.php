@@ -27,9 +27,9 @@ class HomeController extends Controller
     {
         //投稿DBの取得とログインユーザーを取得
         //新しい順に投稿を表示
-        $incidentPosts=IncidentPost::orderBy('created_at','desc')->get();
-        $user=auth()->user();
-        return view('home',compact('incidentPosts','user'));
+        $incidentPosts = IncidentPost::orderBy('created_at', 'desc')->get();
+        $user = auth()->user();
+        return view('home', compact('incidentPosts', 'user'));
 
         // return view('home');
     }
@@ -37,16 +37,15 @@ class HomeController extends Controller
     public function myPost()
     {
         //新しい順に表示
-        $user=auth()->user()->id;
-        $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->get();
-        return view('myPost',compact('incidentPosts'));
+        $user = auth()->user()->id;
+        $incidentPosts = IncidentPost::where('user_id', $user)->orderBy('created_at', 'desc')->get();
+        return view('myPost', compact('incidentPosts'));
     }
 
     public function myComment()
     {
-        $user=auth()->user()->id;
-        $comments=Comment::where('user_id',$user)->orderBy('created_at','desc')->get();
-        return view('myComment',compact('comments'));
+        $user = auth()->user()->id;
+        $comments = Comment::where('user_id', $user)->orderBy('created_at', 'desc')->get();
+        return view('myComment', compact('comments'));
     }
-
 }

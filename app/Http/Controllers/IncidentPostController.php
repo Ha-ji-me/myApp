@@ -41,26 +41,25 @@ class IncidentPostController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->validate([
-            'title'=>'required|max:50',
-            'body'=>'required|max:1500',
-            'image'=>'image|max:1024'
+            'title' => 'required|max:50',
+            'body' => 'required|max:1500',
+            'image' => 'image|max:1024'
         ]);
 
-        $incidentPost=new IncidentPost();
+        $incidentPost = new IncidentPost();
         $incidentPost->title = $inputs['title'];
         $incidentPost->body = $inputs['body'];
         $incidentPost->user_id = auth()->user()->id;
 
-        if(request('image')){
+        if (request('image')) {
             //画像に日時情報を付与して保存
             $original = request()->file('image')->getClientOriginalName();
-            $name = date('Ymd_His').'_'.$original;
-            request()->file('image')->move('storage/images',$name);
+            $name = date('Ymd_His') . '_' . $original;
+            request()->file('image')->move('storage/images', $name);
             $incidentPost->image = $name;
         }
         $incidentPost->save();
-        return back()->with('message','投稿を作成しました！');
-
+        return back()->with('message', '投稿を作成しました！');
     }
 
     /**
@@ -71,7 +70,7 @@ class IncidentPostController extends Controller
      */
     public function show(IncidentPost $incidentPost)
     {
-        return view('incidentPost.show',compact('incidentPost'));
+        return view('incidentPost.show', compact('incidentPost'));
     }
 
     /**
@@ -84,7 +83,7 @@ class IncidentPostController extends Controller
     {
         $this->authorize('update', $incidentPost);
 
-        return view('incidentPost.edit',compact('incidentPost'));
+        return view('incidentPost.edit', compact('incidentPost'));
     }
 
     /**
@@ -98,20 +97,20 @@ class IncidentPostController extends Controller
     {
         $this->authorize('update', $incidentPost);
 
-        $inputs=$request->validate([
-            'title'=>'required|max:50',
-            'body'=>'required|max:1500',
-            'image'=>'image|max:1024'
+        $inputs = $request->validate([
+            'title' => 'required|max:50',
+            'body' => 'required|max:1500',
+            'image' => 'image|max:1024'
         ]);
 
-        $incidentPost->title=$inputs['title'];
-        $incidentPost->body=$inputs['body'];
+        $incidentPost->title = $inputs['title'];
+        $incidentPost->body = $inputs['body'];
 
-        if(request('image')){
-            $original=request()->file('image')->getClientOriginalName();
-            $name=date('Ymd_His').'_'.$original;
-            $file=request()->file('image')->move('storage/images', $name);
-            $incidentPost->image=$name;
+        if (request('image')) {
+            $original = request()->file('image')->getClientOriginalName();
+            $name = date('Ymd_His') . '_' . $original;
+            $file = request()->file('image')->move('storage/images', $name);
+            $incidentPost->image = $name;
         }
 
         $incidentPost->save();
@@ -127,7 +126,7 @@ class IncidentPostController extends Controller
      */
     public function destroy(IncidentPost $incidentPost)
     {
-        $this->authorize('delete',$incidentPost);
+        $this->authorize('delete', $incidentPost);
 
         //投稿記事に加え、コメントも同時に削除
         $incidentPost->comments()->delete();

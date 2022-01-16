@@ -17,7 +17,7 @@
 
 Auth::routes();
 //トップページ（ログインユーザー移動できず）
-Route::get('/',function(){
+Route::get('/', function () {
     return view('auth.login');
 })->middleware('guest');
 
@@ -35,13 +35,13 @@ Route::resource('/incident-post', 'IncidentPostController');
 // Route::delete('/post/{post}', 'PostController@destroy')->name('post.destroy');
 
 //コメント機能
-Route::post('/incident-post/comment/store','CommentController@store')->name('comment.store');
+Route::post('/incident-post/comment/store', 'CommentController@store')->name('comment.store');
 //自分の投稿のみ
-Route::get('/my-post','HomeController@myPost')->name('home.myPost');
+Route::get('/my-post', 'HomeController@myPost')->name('home.myPost');
 //自分のコメント記事のみ
-Route::get('/my-comment','HomeController@myComment')->name('home.myComment');
+Route::get('/my-comment', 'HomeController@myComment')->name('home.myComment');
 //お問い合わせ関連
-Route::get('/contact/create','ContactController@create')->name('contact.create');
-Route::post('/contact/store','ContactController@store')->name('contact.store');
+Route::get('/contact/create', 'ContactController@create')->name('contact.create');
+Route::post('/contact/store', 'ContactController@store')->name('contact.store');
 //管理者用ユーザー一覧
-Route::get('/profile/index','ProfileController@index')->name('profile.index');
+Route::get('/profile/index', 'ProfileController@index')->name('profile.index');
