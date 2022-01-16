@@ -51,7 +51,7 @@
 @foreach ($incidentPost->comments as $comment)
 <div class="card mb-4">
     <div class="card-header">
-        <img src="{{asset('storage/avatar/'.($incidentPost->user->avatar??'user_default.jpg'))}}"
+        <img src="{{asset('storage/avatar/'.($comment->user->avatar??'user_default.jpg'))}}"
         class="rounded-circle" style="width:40px;height:40px;">
         {{$comment->user->name}}
     </div>
