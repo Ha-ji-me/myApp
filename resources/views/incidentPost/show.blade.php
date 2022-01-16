@@ -2,6 +2,8 @@
 @section('content')
 <div class="card mb-4">
     <div class="card-header">
+        <img src="{{asset('storage/avatar/'.($incidentPost->user->avatar??'user_default.jpg'))}}"
+        class="rounded-circle" style="width:40px;height:40px;">
         <div class="text-muted small mr-3">
             <!-- ユーザー名 -->
             {{$incidentPost->user->name}}
@@ -51,8 +53,9 @@
 @if ($incidentPost->comments)
 @foreach ($incidentPost->comments as $comment)
 <div class="card mb-4">
-
     <div class="card-header">
+        <img src="{{asset('storage/avatar/'.($comment->user->avatar??'user_default.jpg'))}}"
+        class="rounded-circle" style="width:40px;height:40px;">
         {{$comment->user->name}}
     </div>
     <div class="card-body">
