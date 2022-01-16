@@ -14,4 +14,15 @@ class ProfileController extends Controller
         return view('profile.index',compact('users'));
 
     }
+
+    public function edit(User $user)
+    {
+        return view('profile.edit', compact('user'));
+    }
+
+    // public function update(User $user)
+    // {
+    //     return view('profile.edit', compact('user'));
+    // }
+
 }
