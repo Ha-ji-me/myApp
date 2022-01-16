@@ -17,12 +17,9 @@ class ProfileController extends Controller
 
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         return view('profile.edit', compact('user'));
     }
 
-    // public function update(User $user)
-    // {
-    //     return view('profile.edit', compact('user'));
-    // }
 
 }
