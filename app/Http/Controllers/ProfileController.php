@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\storage;
 
 class ProfileController extends Controller
 {
@@ -43,6 +44,11 @@ class ProfileController extends Controller
         //アバター保存
         if(request('avatar'))
         {
+            if($user->avatar!=='user_default.jpg')
+            {
+                $oldAvatar = 'public/avatar/'.$user->avatar;
+                Storage::delete($oldAvatar);
+            }
             $name = request()->file('avatar')->getClientOriginalName();
             $avatar = date('Ymd_His').'_'.$name;
             request()->file('avatar')->storeAs('public/avatar',$avatar);
