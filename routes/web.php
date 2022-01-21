@@ -45,3 +45,6 @@ Route::get('/contact/create','ContactController@create')->name('contact.create')
 Route::post('/contact/store','ContactController@store')->name('contact.store');
 //管理者用ユーザー一覧
 Route::get('/profile/index','ProfileController@index')->name('profile.index');
+//プロフィール編集
+Route::get('/profile/{user}','ProfileController@edit')->name('profile.edit');
+Route::put('/profile/{user}','ProfileController@update')->name('profile.update');
