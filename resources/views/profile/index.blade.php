@@ -3,6 +3,10 @@
 
 <h1 class="mt4">ユーザー一覧</h1>
 
+@if(session('message'))
+<div class="alert alert-success">{{session('message')}}</div>
+@endif
+
 <table class="table" style="background-color:white;">
     <thead class="thead-dark">
         <tr>
