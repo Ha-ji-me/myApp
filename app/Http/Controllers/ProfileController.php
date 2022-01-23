@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\storage;
@@ -18,11 +19,14 @@ class ProfileController extends Controller
 
     }
 
+
     public function edit(User $user)
     {
         $this->authorize('update', $user);
-        return view('profile.edit', compact('user'));
+        $roles = Role::all();
+        return view('profile.edit', compact('user', 'roles'));
     }
+
 
     public function update(User $user, Request $request)
     {
@@ -57,6 +61,17 @@ class ProfileController extends Controller
 
         $user->update($inputs);
         return back()->with('message','情報を更新しました');
+    }
+
+
+    public function delete(User $user)
+    {
+        if ($user->avatar !== 'user_default.jpg')
+        {
+            Storage::delete('public/avatar/'.$user->avatar);
+        }
+        $user->delete();
+        return back()->with('message', 'ユーザーを削除しました');
     }
 
 }

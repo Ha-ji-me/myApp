@@ -48,3 +48,11 @@ Route::get('/profile/index','ProfileController@index')->name('profile.index');
 //プロフィール編集
 Route::get('/profile/{user}','ProfileController@edit')->name('profile.edit');
 Route::put('/profile/{user}','ProfileController@update')->name('profile.update');
+//管理者
+Route::middleware(['can:admin'])->group(function(){
+    Route::get('/profile/index', 'ProfileController@index')->name('profile.index');
+    Route::delete('/profile/delete/{user}', 'ProfileController@delete')->name('profile.delete');
+
+    Route::put('/roles/{user}/attach', 'RoleController@attach')->name('role.attach');
+    Route::put('/roles/{user}/detach', 'RoleController@detach')->name('role.detach');
+});
