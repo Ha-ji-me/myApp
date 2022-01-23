@@ -6,7 +6,7 @@
         class="rounded-circle" style="width:40px;height:40px;">
         <div class="text-muted small mr-3">
             <!-- ユーザー名 -->
-            {{$incidentPost->user->name}}
+            {{$incidentPost->user->name ?? '削除されたユーザー'}}
         </div>
         <!-- タイトル -->
         <h4>{{$incidentPost->title}}</h4>
@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<!-- 以下コメント機能周り -->
+<!-- コメント機能周り -->
 <hr>
 @if ($incidentPost->comments)
 @foreach ($incidentPost->comments as $comment)
@@ -56,7 +56,9 @@
     <div class="card-header">
         <img src="{{asset('storage/avatar/'.($comment->user->avatar??'user_default.jpg'))}}"
         class="rounded-circle" style="width:40px;height:40px;">
-        {{$comment->user->name}}
+        <div class="text-muted small mr-3">
+        {{$comment->user->name ?? '削除されたユーザー'}}
+        </div>
     </div>
     <div class="card-body">
         {{$comment->body}}

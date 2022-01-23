@@ -23,7 +23,7 @@
                         <!-- タイトル -->
                         <div class="media-body ml-3"><a href="{{route('incident-post.show',$incidentPost)}}">{{$incidentPost->title}}</a>
                             <!-- ユーザー名 -->
-                            <div class="text-muted small"> {{$incidentPost->user->name}}</div>
+                            <div class="text-muted small"> {{$incidentPost->user->name ?? '削除されたユーザー'}}</div>
                         </div>
                         <div class="text-muted small ml-3">
                             <div>投稿日</div>
