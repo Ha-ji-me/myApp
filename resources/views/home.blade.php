@@ -58,4 +58,5 @@
     </div>
 </div>
 @endforeach
+{{ $incidentPosts->links() }}
 @endsection
