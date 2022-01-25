@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         // $incidentPosts=IncidentPost::orderBy('created_at','desc')->get(); ペじネーションなしver
-        $incidentPosts=IncidentPost::orderBy('created_at','desc')->simplePaginate(10);
+        $incidentPosts=IncidentPost::orderBy('created_at','desc')->paginate(10);
         $user=auth()->user();
         return view('home',compact('incidentPosts','user'));
     }
@@ -45,7 +45,7 @@ class HomeController extends Controller
     {
         $user=auth()->user()->id;
         // $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->get();
-        $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->simplePaginate(10);
+        $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->paginate(10);
         return view('myPost',compact('incidentPosts'));
     }
 
@@ -53,7 +53,7 @@ class HomeController extends Controller
     {
         $user=auth()->user()->id;
         // $comments=Comment::where('user_id',$user)->orderBy('created_at','desc')->get();
-        $comments=Comment::where('user_id',$user)->orderBy('created_at','desc')->simplePaginate(10);
+        $comments=Comment::where('user_id',$user)->orderBy('created_at','desc')->paginate(10);
         return view('myComment',compact('comments'));
     }
 
