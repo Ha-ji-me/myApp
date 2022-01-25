@@ -34,9 +34,11 @@
                 </div>
                 <div class="card-body">
                     <!-- 記事内容 -->
-                    <!-- 表示文字数を制限 -->
-                    <p> {{ Str::limit($incidentPost->body,100,'...') }} </p>
+                    <!-- 改行を反映して表示文字数を制限 -->
+                    <!-- <p>  Str::limit$incidentPost->body,100,'...' </p> -->
+                    <p> {!! nl2br(htmlspecialchars(Str::limit($incidentPost->body,100,'.........'))) !!}</p>
                 </div>
+                <!-- フッター -->
                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                     <div class="px-4 pt-3">
                         @if($incidentPost->comments->count())

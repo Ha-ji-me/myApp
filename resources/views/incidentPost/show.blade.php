@@ -29,7 +29,9 @@
     <div class="card-body">
         <p class="card-text">
             <!-- 記事内容 -->
-            {{$incidentPost->body}}
+            <!-- 新規投稿入力時の改行を反映させる -->
+            <!-- $incidentPost->body -->
+            {!! nl2br(htmlspecialchars($incidentPost->body)) !!}
         </p>
         <!-- 画像ファイル -->
         @if($incidentPost->image)

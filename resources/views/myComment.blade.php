@@ -36,7 +36,8 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <p>{{Str::limit($incidentPost->body, 50, ' ...')}}</p>
+
+                    <p>{!! nl2br(htmlspecialchars(Str::limit($incidentPost->body,50,'.........'))) !!}</p>
                 </div>
                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                     <div class="px-4 pt-3">
