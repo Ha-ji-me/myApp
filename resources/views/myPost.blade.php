@@ -6,7 +6,9 @@
 @endif
 
 <div class="ml-2 mb-3">
-    -あなたの投稿-
+    <h4>
+        あなたの投稿
+    </h4>
 </div>
 
 @if (count($incidentPosts) == 0)
