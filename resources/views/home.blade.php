@@ -11,6 +11,15 @@
 
 <h4>{{$user->name}}さんも投稿を共有しましょう!!</h4>
 
+<div class="d-flex justify-content-center ">
+    <form class="form-inline my-2 my-lg-0 ml-2" style="height: 100px;">
+        <div class="form-group">
+            <input type="search" class="form-control mr-sm-2" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索...">
+        </div>
+        <input type="submit" value="検索" class="btn btn-info">
+    </form>
+</div>
+
 @foreach ($incidentPosts as $incidentPost)
 <div class="container-fluid mt-20" style="margin-left:-10px;">
     <div class="row">
@@ -60,5 +69,9 @@
     </div>
 </div>
 @endforeach
-{{ $incidentPosts->links() }}
+
+<div class="d-flex justify-content-center ">
+    {{ $incidentPosts->links() }}
+</div>
+
 @endsection
