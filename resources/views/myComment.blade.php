@@ -60,6 +60,10 @@
     </div>
 </div>
 @endforeach
-{{ $comments->links() }}
+
+<div class="d-flex justify-content-center ">
+    {{ $comments->links() }}
+</div>
+
 @endif
 @endsection

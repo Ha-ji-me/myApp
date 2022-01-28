@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\IncidentPost;
 use App\Models\Comment;
 
+
 class HomeController extends Controller
 {
     /**

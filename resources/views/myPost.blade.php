@@ -59,6 +59,10 @@
     </div>
 </div>
 @endforeach
+
+<div class="d-flex justify-content-center ">
 {{ $incidentPosts->links() }}
+</div>
+
 @endif
 @endsection
