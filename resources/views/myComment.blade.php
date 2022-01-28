@@ -62,7 +62,7 @@
 @endforeach
 
 <div class="d-flex justify-content-center ">
-    {{ $comments->links() }}
+{{ $comments->links() }}
 </div>
 
 @endif
