@@ -54,6 +54,9 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <!-- ログインユーザーのプロフィール画像も表示 -->
+                                <img src="{{asset('storage/avatar/'.($user->avatar??'user_default.jpg'))}}"
+                                    class="rounded-circle" style="width:40px;height:40px;">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
