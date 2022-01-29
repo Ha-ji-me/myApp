@@ -43,10 +43,14 @@
                     <div class="px-4 pt-3">
                         @if ($incidentPost->comments->count())
                         <span class="badge badge-success">
-                            コメント {{$incidentPost->comments->count()}}件
+                            <i class="fas fa-thin fa-comment pr-1">
+                            {{$incidentPost->comments->count()}}
+                            </i>
                         </span>
                     @else
-                        <span>コメントはありません。</span>
+                        <span>
+                            コメントはありません。
+                        </span>
                     @endif
                     </div>
 
