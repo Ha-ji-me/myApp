@@ -53,6 +53,7 @@
                     <div class="px-4 pt-3">
                         @if($incidentPost->comments->count())
                         <span class="badge badge-success">
+                            <!-- fontAwesomeでコメントアイコン -->
                             <i class="fas fa-thin fa-comment pr-1">
                             {{$incidentPost->comments->count()}}
                             </i>
