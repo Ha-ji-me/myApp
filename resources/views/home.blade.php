@@ -9,7 +9,7 @@
     home
 </div> -->
 
-<h4>{{$user->name}}さんも投稿を共有しましょう!!</h4>
+<!-- <h4>{{$user->name}}さんも投稿を共有しましょう!!</h4> -->
 
 <!-- 検索フォーム -->
 <div class="d-flex justify-content-center ">
@@ -53,10 +53,14 @@
                     <div class="px-4 pt-3">
                         @if($incidentPost->comments->count())
                         <span class="badge badge-success">
-                            コメント{{$incidentPost->comments->count()}}件
+                            <i class="fas fa-thin fa-comment pr-1">
+                            {{$incidentPost->comments->count()}}
+                            </i>
                         </span>
                         @else
-                        <span class="badge badge-secondary">コメント0件</span>
+                        <span class="badge badge-secondary">
+                            <i class="fas fa-thin fa-comment pr-1"> 0 </i>
+                        </span>
                         @endif
                     </div>
                     <div class="px-4 pt-3">
