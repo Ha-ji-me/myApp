@@ -29,7 +29,8 @@ class IncidentPostController extends Controller
      */
     public function create()
     {
-        return view('incidentPost.create');
+        $user = auth()->user();
+        return view('incidentPost.create',compact('user'));
     }
 
     /**
