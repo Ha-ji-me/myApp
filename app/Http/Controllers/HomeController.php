@@ -50,18 +50,20 @@ class HomeController extends Controller
      */
     public function myPost()
     {
-        $user=auth()->user()->id;
+        $user = auth()->user();  //右上ナビバー(app.blade)にアイコンを渡すための変数
+        $userId = auth()->user()->id;  //$userから名前変更、同時に上の$userを作成
         // $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->get();
-        $incidentPosts=IncidentPost::where('user_id',$user)->orderBy('created_at','desc')->paginate(10);
-        return view('myPost',compact('incidentPosts'));
+        $incidentPosts = IncidentPost::where('user_id',$userId)->orderBy('created_at','desc')->paginate(10);
+        return view('myPost',compact('incidentPosts','user'));
     }
 
     public function myComment()
     {
-        $user=auth()->user()->id;
+        $user = auth()->user();
+        $userId = auth()->user()->id;
         // $comments=Comment::where('user_id',$user)->orderBy('created_at','desc')->get();
-        $comments=Comment::where('user_id',$user)->orderBy('created_at','desc')->paginate(10);
-        return view('myComment',compact('comments'));
+        $comments = Comment::where('user_id',$userId)->orderBy('created_at','desc')->paginate(10);
+        return view('myComment',compact('comments','user'));
     }
 
 }
