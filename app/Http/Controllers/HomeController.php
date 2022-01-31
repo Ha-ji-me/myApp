@@ -47,6 +47,7 @@ class HomeController extends Controller
      *
      * 新しい順に表示
      * ペじネーションで自分の投稿を表示
+     * 1月30日に変更を加えました。
      */
     public function myPost()
     {
