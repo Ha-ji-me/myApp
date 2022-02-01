@@ -25,6 +25,7 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm"> -->
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -60,13 +61,18 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
+                                <!-- メニューバー項目 -->
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <!-- プロフィール編集バー追加 -->
+                                    <a class="dropdown-item" href="{{ route('profile.edit', auth()->user()->id) }}">
+                                    プロフィール編集
+                                    </a>
+                                    <!-- ログアウトバー -->
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

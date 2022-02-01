@@ -1,7 +1,7 @@
 <div class="list-group">
     <a href="{{route('home')}}"
     class="list-group-item {{url()->current()==route('home')? 'active' : ''}}">
-        <i class="fas fa-home pr-2"></i><span>みんなの投稿</span>
+        <i class="fas fa-home pr-2"></i><span>みんなの出来事</span>
     </a>
 
     <a href="{{route('incident-post.create')}}"
@@ -19,10 +19,11 @@
         <i class="fas fa-user-edit pr-2"></i><span>コメントした投稿</span>
     </a>
 
-    <a href="{{route('profile.edit',auth()->user()->id)}}"
+    <!-- プロフィール編集は右上メニューバーに移動 -->
+    <!-- <a href="{{route('profile.edit',auth()->user()->id)}}"
     class="list-group-item {{url()->current()==route('profile.edit', auth()->user()->id)?'active':''}}">
         <i class="fas fa-id-badge pr-2"></i><span>プロフィール編集</span>
-    </a>
+    </a> -->
 
     @can('admin')
     <a href="{{route('profile.index')}}"
@@ -30,5 +31,4 @@
         <i class="fas fa-user-edit pr-2"></i><span>ユーザーアカウント</span>
     </a>
     @endcan
-
 </div>
