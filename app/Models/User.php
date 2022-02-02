@@ -55,4 +55,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Models\Role');
     }
 
+    //お気に入り機能
+    public function favorites()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
+
 }
