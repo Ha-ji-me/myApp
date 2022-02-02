@@ -24,6 +24,7 @@ class ProfileController extends Controller
     {
         $this->authorize('update', $user);
         $roles = Role::all();
+
         return view('profile.edit', compact('user', 'roles'));
     }
 
