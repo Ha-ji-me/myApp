@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favorite;
 use Illuminate\Http\Request;
 use App\Models\IncidentPost;
 
@@ -72,7 +73,8 @@ class IncidentPostController extends Controller
      */
     public function show(IncidentPost $incidentPost)
     {
-        return view('incidentPost.show',compact('incidentPost'));
+        $favorite = Favorite::where('incident_post_id', $incidentPost->id)->where('user_id', auth()->user()->id)->first();
+        return view('incidentPost.show',compact('incidentPost', 'favorite'));
     }
 
     /**

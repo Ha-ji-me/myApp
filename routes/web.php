@@ -56,3 +56,7 @@ Route::middleware(['can:admin'])->group(function(){
     Route::put('/roles/{user}/attach', 'RoleController@attach')->name('role.attach');
     Route::put('/roles/{user}/detach', 'RoleController@detach')->name('role.detach');
 });
+//お気に入り機能
+Route::get('/reply/favorite/{incidentPost}', 'FavoriteController@favorite')->name('favorite');
+Route::get('/reply/unfavorite/{incidentPost}', 'FavoriteController@unfavorite')->name('unfavorite');
+

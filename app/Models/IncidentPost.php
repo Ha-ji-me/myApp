@@ -16,11 +16,18 @@ class IncidentPost extends Model
     //     'image',
     // ];
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo('App\Models\User');
     }
 
-    public function comments(){
+    public function comments()
+    {
         return $this->hasMany('App\Models\Comment');
+    }
+
+    public function favorites()
+    {
+        return $this->hasMany('App\Models\Favorite');
     }
 }
