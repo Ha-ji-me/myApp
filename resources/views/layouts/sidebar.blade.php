@@ -19,6 +19,11 @@
         <i class="fas fa-light fa-comments pr-2"></i><span>コメントした投稿</span>
     </a>
 
+    <a href="{{route('home.myFavorite')}}"
+    class="list-group-item {{url()->current()==route('home.myFavorite')?'active':''}}">
+        <i class="fas fa-light fa-solid fa-heart pr-2"></i><span>お気に入りにした投稿</span>
+    </a>
+
     <!-- プロフィール編集は右上メニューバーに移動 -->
     <!-- <a href="{{route('profile.edit',auth()->user()->id)}}"
     class="list-group-item {{url()->current()==route('profile.edit', auth()->user()->id)?'active':''}}">
