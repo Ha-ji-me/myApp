@@ -61,7 +61,7 @@ class IncidentPostController extends Controller
             $incidentPost->image = $name;
         }
         $incidentPost->save();
-        return back()->with('message','投稿を作成しました！');
+        return redirect('home')->with('message', '投稿を作成しました！');
 
     }
 
