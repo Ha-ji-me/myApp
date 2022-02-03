@@ -72,7 +72,7 @@ class HomeController extends Controller
         $user = auth()->user();
         $userId = auth()->user()->id;
         $favorites = Favorite::where('user_id', $userId)->orderBy('created_at','desc')->paginate(10);
-        return view('myFavorite', compact('favorites','userId'));
+        return view('myFavorite', compact('favorites','user'));
     }
 
 }
