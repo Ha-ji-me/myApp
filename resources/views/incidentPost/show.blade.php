@@ -43,6 +43,29 @@
         @endif
     </div>
     <div class="card-footer">
+        <!-- お気に入り機能 -->
+        <span>
+        <!-- もし$favoriteがあれば（ユーザーがお気に入りにしていれば） -->
+        @if($favorite)
+            <a href="{{ route('unfavorite', $incidentPost) }}" class="btn btn-danger btn-sm">
+                いいねする
+                <!-- お気に入り数を表示 -->
+                <span>
+                    {{ $incidentPost->favorites->count() }}
+                </span>
+            </a>
+        @else
+        <!-- ユーザーがお気に入りにしていなければ、ボタン表示 -->
+            <a href="{{ route('favorite', $incidentPost) }}" class="btn btn-secondary btn-sm">
+                いいねをやめる
+                <!-- お気に入り数を表示 -->
+                <span class="badge">
+                    {{ $incidentPost->favorites->count() }}
+                </span>
+            </a>
+        @endif
+        </span>
+
         <span class="mr-2 float-right">
             <!-- 投稿日時 -->
             投稿日時 {{$incidentPost->created_at->diffForHumans()}}
