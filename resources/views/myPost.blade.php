@@ -6,9 +6,9 @@
 @endif
 
 <div class="ml-2 mb-3">
-    <h4>
-        あなたの投稿
-    </h4>
+    <h2 style="text-align:center">
+        {{ $user->name }}さんの投稿
+    </h2>
 </div>
 
 @if (count($incidentPosts) == 0)

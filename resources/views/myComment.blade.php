@@ -6,7 +6,7 @@
 @endif
 
 <div class="ml-2 mb-3">
-    <h4>-あなたがコメントした投稿-<h4>
+    <h2 style="text-align:center">コメントした投稿<h2>
 </div>
 
 @if (count($comments) == 0)

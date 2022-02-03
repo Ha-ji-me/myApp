@@ -5,7 +5,7 @@
 <div class="alert alert-success">{{session('message')}}</div>
 @endif
 <div class="ml-2 mb-3">
-    <h4>-あなたがお気に入りにした投稿-<h4>
+    <h2 style="text-align:center">お気に入りにした投稿<h2>
 </div>
 
 @if (count($favorites) == 0)

@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-10 mt-6">
         <div class="card-body">
-            <h1 class="mt4">出来事の新規投稿</h1>
+            <h2 class="mt4" style="text-align:center">出来事の新規投稿</h2>
             <!-- {{--エラーメッセージ--}} -->
             @if($errors->any())
             <div class="alert alert-danger">
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="image">添付画像の選択（1MBまで） </label>
+                    <label for="image"> ＊添付画像の選択（1MBまで） </label>
                     <div class="col-md-6">
                         <input id="image" type="file" name="image">
                     </div>

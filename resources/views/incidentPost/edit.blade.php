@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-md-10 mt-6">
         <div class="card-body">
-            <h1 class="mt4">投稿編集</h1>
+            <h2 class="mt4" style="text-align:center">投稿の編集</h2>
             @if($errors->any())
             <div class="alert alert-danger">
                 <ul>
