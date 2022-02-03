@@ -59,4 +59,5 @@ Route::middleware(['can:admin'])->group(function(){
 //お気に入り機能
 Route::get('/reply/favorite/{incidentPost}', 'FavoriteController@favorite')->name('favorite');
 Route::get('/reply/unfavorite/{incidentPost}', 'FavoriteController@unfavorite')->name('unfavorite');
+Route::get('/my-favorite','HomeController@myFavorite')->name('home.myFavorite');
 
