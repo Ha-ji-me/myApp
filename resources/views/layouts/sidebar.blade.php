@@ -16,7 +16,7 @@
 
     <a href="{{route('home.myComment')}}"
     class="list-group-item {{url()->current()==route('home.myComment')?'active':''}}">
-        <i class="fas fa-user-edit pr-2"></i><span>コメントした投稿</span>
+        <i class="fas fa-light fa-comments pr-2"></i><span>コメントした投稿</span>
     </a>
 
     <!-- プロフィール編集は右上メニューバーに移動 -->
