@@ -47,7 +47,7 @@
         <span>
         <!-- もし$favoriteがあれば（ユーザーがお気に入りにしていれば） -->
         @if($favorite)
-            <a href="{{ route('unfavorite', $incidentPost) }}" class="btn btn-secondary btn-sm">
+            <a href="{{ route('unfavorite', $incidentPost) }}" class="btn btn-danger btn-sm">
                 <!-- お気に入り数を表示 -->
                 <span>
                     <i class="fas fa-thin fa-heart">
@@ -57,7 +57,7 @@
             </a>
         @else
         <!-- ユーザーがお気に入りにしていなければ、ボタン表示 -->
-            <a href="{{ route('favorite', $incidentPost) }}" class="btn btn-danger btn-sm">
+            <a href="{{ route('favorite', $incidentPost) }}" class="btn btn-secondary btn-sm">
                 <span>
                     <i class="fas fa-thin fa-heart">
                     {{ $incidentPost->favorites->count() }}
