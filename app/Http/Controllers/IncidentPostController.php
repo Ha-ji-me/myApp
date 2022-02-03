@@ -119,7 +119,7 @@ class IncidentPostController extends Controller
 
         $incidentPost->save();
 
-        return back()->with('message', '投稿を更新しました');
+        return redirect('home')->with('message', '投稿を更新しました');
     }
 
     /**
