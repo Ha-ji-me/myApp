@@ -134,6 +134,8 @@ class IncidentPostController extends Controller
 
         //投稿記事に加え、コメントも同時に削除
         $incidentPost->comments()->delete();
+        //投稿記事に加え、お気に入りも同時に削除
+        $incidentPost->favorites()->delete();
         $incidentPost->delete();
         return redirect()->route('home')->with('message', '投稿を削除しました');
     }
