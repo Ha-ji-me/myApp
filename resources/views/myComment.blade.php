@@ -36,10 +36,11 @@
                     </div>
                 </div>
                 <div class="card-body">
-
+                    <!-- 改行を反映して表示文字数を制限 -->
                     <p>{!! nl2br(htmlspecialchars(Str::limit($incidentPost->body,50,'.........'))) !!}</p>
                 </div>
                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                    <!-- コメントアイコンと数の表示 -->
                     <div class="px-4 pt-3">
                         @if ($incidentPost->comments->count())
                         <span class="badge badge-success">
@@ -48,8 +49,22 @@
                             </i>
                         </span>
                     @else
-                        <span>
-                            コメントはありません。
+                        <span class="badge badge-secondary">
+                        <i class="fas fa-thin fa-comment pr-1">
+                        0
+                        </i>
+                        </span>
+                    @endif
+                    <!-- いいね数とアイコンの表示 -->
+                    @if($incidentPost->favorites->count())
+                        <span class="badge badge-danger">
+                            <i class="fas fa-thin fa-heart pr-1">
+                            {{$incidentPost->favorites->count()}}
+                            </i>
+                        </span>
+                    @else
+                        <span class="badge badge-secondary">
+                            <i class="fas fa-thin fa-heart pr-1"> 0 </i>
                         </span>
                     @endif
                     </div>
