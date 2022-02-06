@@ -8,78 +8,45 @@ use App\Models\TodoPost;
 class TodoPostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Create a new controller instance.
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function index()
     {
-        //
+        $user = auth()->user();
+        $todoPosts = TodoPost::orderBy('created_at','desc')->paginate(10);
+
+        return view('todoPost.index', compact('todoPosts','user'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        $user = auth()->user();
+        return view('todoPost.create',compact('user'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $inputs = $request->validate
+        ([
+            'title'=>'required|max:20',
+            'body'=>'required|max:100'
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $todoPost = new TodoPost();
+        $todoPost->title = $request['title'];
+        $todoPost->body = $request['body'];
+        $todoPost->user_id = auth()->user()->id;
+        $todoPost->save();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        // return redirect('todo-post/index')->with('message','投稿を作成しました！');
+        return redirect('/todo-post')->with('message','投稿を作成しました！');
     }
 }
