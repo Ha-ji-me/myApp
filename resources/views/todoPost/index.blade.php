@@ -41,8 +41,8 @@
                     <p> {!! nl2br(htmlspecialchars(Str::limit($todoPost->body,100,'.........'))) !!}</p>
                 </div>
                 <!-- フッター -->
-                <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
-                    <div class="px-4 pt-3">
+                <!-- <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
+                    <div class="px-4 pt-3"> -->
                     <!-- コメント数とアイコンの表示 -->
                         <!-- 削除しました -->
                     <!-- いいね数とアイコンの表示 -->
