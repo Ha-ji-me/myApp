@@ -30,6 +30,17 @@
         <i class="fas fa-id-badge pr-2"></i><span>プロフィール編集</span>
     </a> -->
 
+    <!-- 最後に新規投稿メニューバーの子要素としてまとめる -->
+    <a href="{{route('todo-post.create')}}"
+    class="list-group-item {{url()->current()==route('todo-post.create')?'active':''}}">
+        <i class="fas fa-light fa-solid fa-heart pr-2"></i><span>Todoの新規投稿</span>
+    </a>
+
+    <a href="{{route('todo-post.index')}}"
+    class="list-group-item {{url()->current()==route('todo-post.index')?'active':''}}">
+        <i class="fas fa-light fa-solid fa-heart pr-2"></i><span>みんなのTodo</span>
+    </a>
+
     @can('admin')
     <a href="{{route('profile.index')}}"
     class="list-group-item {{url()->current()==route('profile.index')?'active':''}}">

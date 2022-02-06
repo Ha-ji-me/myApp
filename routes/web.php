@@ -59,3 +59,9 @@ Route::middleware(['can:admin'])->group(function(){
 Route::get('/reply/favorite/{incidentPost}', 'FavoriteController@favorite')->name('favorite');
 Route::get('/reply/unfavorite/{incidentPost}', 'FavoriteController@unfavorite')->name('unfavorite');
 Route::get('/my-favorite','HomeController@myFavorite')->name('home.myFavorite');
+//Todo関連
+Route::get('/todo-post','TodoPostController@index')->name('todo-post.index');
+Route::get('/todo-post/create','TodoPostController@create')->name('todo-post.create');
+Route::post('/todo-post/store','TodoPostController@store')->name('todo-post.store');
+
+
