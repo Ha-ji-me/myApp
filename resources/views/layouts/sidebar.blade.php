@@ -31,9 +31,14 @@
     </a> -->
 
     <!-- 最後に新規投稿メニューバーの子要素としてまとめる -->
-    <a href="{{route('incident-post.create')}}"
-    class="list-group-item {{url()->current()==route('incident-post.create')? 'active' : ''}}">
-        <i class="fas fa-pen-nib pr-2"></i><span>Todo新規投稿</span>
+    <a href="{{route('todo-post.create')}}"
+    class="list-group-item {{url()->current()==route('todo-post.create')?'active':''}}">
+        <i class="fas fa-light fa-solid fa-heart pr-2"></i><span>Todoの新規投稿</span>
+    </a>
+
+    <a href="{{route('todo-post.index')}}"
+    class="list-group-item {{url()->current()==route('todo-post.index')?'active':''}}">
+        <i class="fas fa-light fa-solid fa-heart pr-2"></i><span>みんなのTodo</span>
     </a>
 
     @can('admin')
