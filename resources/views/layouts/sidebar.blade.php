@@ -30,6 +30,12 @@
         <i class="fas fa-id-badge pr-2"></i><span>プロフィール編集</span>
     </a> -->
 
+    <!-- 最後に新規投稿メニューバーの子要素としてまとめる -->
+    <a href="{{route('incident-post.create')}}"
+    class="list-group-item {{url()->current()==route('incident-post.create')? 'active' : ''}}">
+        <i class="fas fa-pen-nib pr-2"></i><span>Todo新規投稿</span>
+    </a>
+
     @can('admin')
     <a href="{{route('profile.index')}}"
     class="list-group-item {{url()->current()==route('profile.index')?'active':''}}">
