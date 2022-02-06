@@ -61,4 +61,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Favorite');
     }
 
+    //Todo投稿情報と紐ずく
+    public function todoPosts()
+    {
+        return $this->hasMany('App\Models\TodoPost');
+    }
+
 }
