@@ -11,13 +11,13 @@
 
 <!-- <h4>{{$user->name}}さんも投稿を共有しましょう!!</h4> -->
 
-<!-- 検索フォーム -->
+<!-- 検索機能 -->
 <div class="d-flex justify-content-center ">
     <form class="form-inline my-2 my-lg-0 ml-2" style="height: 100px;" >
         <div class="form-group">
-            <input type="search" class="form-control mr-sm-2" style="width: 350px;" name="search"  value="{{request('search')}}" placeholder="キーワードを入力" aria-label="検索...">
+            <input type="search" class="form-control mr-sm-2" style="width: 350px; border-radius:70px;" name="search"  value="{{request('search')}}" placeholder="  キーワードを入力" aria-label="検索...">
         </div>
-        <button type="submit" class="btn btn-info">
+        <button type="submit" class="btn btn-info" style="border-radius:70px;">
             <i class="fas fa-search"><span> 検索</span></i>
         </button>
     </form>
@@ -27,7 +27,8 @@
 <div class="container-fluid mt-20" style="margin-left:-10px;">
     <div class="row">
         <div class="col-md-12">
-            <div class="card mb-4">
+            <div class="card mb-3">
+                <!-- header -->
                 <div class="card-header">
                     <div class="media flex-wrap w-100 align-items-center">
                         <img src="{{asset('storage/avatar/'.($incidentPost->user->avatar??'user_default.jpg'))}}"
@@ -44,13 +45,14 @@
                         </div>
                     </div>
                 </div>
+                <!-- body -->
                 <div class="card-body">
                     <!-- 記事内容 -->
                     <!-- 改行を反映して表示文字数を制限 -->
                     <!-- <p>  Str::limit$incidentPost->body,100,'...' </p> -->
                     <p> {!! nl2br(htmlspecialchars(Str::limit($incidentPost->body,100,'.........'))) !!}</p>
                 </div>
-                <!-- フッター -->
+                <!-- footer -->
                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                     <div class="px-4 pt-3">
                     <!-- コメント数とアイコンの表示 -->
