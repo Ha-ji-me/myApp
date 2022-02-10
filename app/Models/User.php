@@ -67,4 +67,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\TodoPost');
     }
 
+    //Todo完了機能
+    public function completeTodo()
+    {
+        return $this->hasMany('App\Models\CompleteTodo');
+    }
+
 }

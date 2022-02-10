@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class="card mb-4">
+    <!-- カードヘッダー -->
     <div class="card-header">
         <img src="{{asset('storage/avatar/'.($incidentPost->user->avatar??'user_default.jpg'))}}"
         class="rounded-circle" style="width:40px;height:40px;">
@@ -16,6 +17,7 @@
             <a href="{{route('incident-post.edit',$incidentPost)}}"><button class="btn btn-primary">編集</button></a>
         </span>
         @endcan
+        <!-- 削除ページへ渡す処理 -->
         @can('delete', $incidentPost)
         <span class="ml-2">
             <form method="post" action="{{route('incident-post.destroy',$incidentPost)}}">
@@ -26,6 +28,7 @@
         </span>
         @endcan
     </div>
+    <!-- カードボディ -->
     <div class="card-body">
         <p class="card-text">
             <!-- 記事内容 -->
@@ -42,6 +45,7 @@
         class="img-fluid mx-auto d-block" style="height:300px;">
         @endif
     </div>
+    <!-- カードフッター -->
     <div class="card-footer">
         <!-- お気に入り機能 -->
         <span>

@@ -12,4 +12,10 @@ class TodoPost extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    //Todo完了
+    public function completeTodo()
+    {
+        return $this->belongsTo('App\Models\CompleteTodo');
+    }
+
 }
