@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\IncidentPost;
 use App\Models\Comment;
 use App\Models\Favorite;
+use App\Models\TodoPost;
 
 class HomeController extends Controller
 {
@@ -74,5 +75,6 @@ class HomeController extends Controller
         $favorites = Favorite::where('user_id', $userId)->orderBy('created_at','desc')->paginate(10);
         return view('myFavorite', compact('favorites','user'));
     }
+
 
 }
