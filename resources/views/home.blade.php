@@ -12,7 +12,7 @@
 <!-- <h4>{{$user->name}}さんも投稿を共有しましょう!!</h4> -->
 
 <!-- 検索機能 -->
-<div class="d-flex justify-content-center ">
+<div class=" d-flex justify-content-center ">
     <form class="form-inline my-2 my-lg-0 ml-2" style="height: 100px;" >
         <div class="form-group">
             <input type="search" class="form-control mr-sm-2" style="width: 350px; border-radius:70px;" name="search"  value="{{request('search')}}" placeholder="  キーワードを入力" aria-label="検索...">
@@ -34,7 +34,7 @@
                         <img src="{{asset('storage/avatar/'.($incidentPost->user->avatar??'user_default.jpg'))}}"
                         class="rounded-circle" style="width:40px;height:40px;">
                         <!-- タイトル -->
-                        <div class="media-body ml-3"><a href="{{route('incident-post.show',$incidentPost)}}">{{$incidentPost->title}}</a>
+                        <div class="media-body ml-3 "><a href="{{route('incident-post.show',$incidentPost)}}" class="text-dark">{{$incidentPost->title}}</a>
                             <!-- ユーザー名 -->
                             <div class="text-muted small"> {{$incidentPost->user->name ?? '削除されたユーザー'}}</div>
                         </div>
