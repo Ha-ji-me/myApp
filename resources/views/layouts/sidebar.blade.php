@@ -22,7 +22,7 @@
     <a href="{{route('home.myFavorite')}}"
     class="list-group-item {{url()->current()==route('home.myFavorite')?'active':''}}">
         <i class="fas fa-light fa-solid fa-heart pr-2" style="color: #686b68;"></i><span>お気に入りにした投稿</span>
-    </a>
+    </a> 
 
     <!-- 最後に新規投稿メニューバーの子要素としてまとめる -->
     <a href="{{route('todo-post.create')}}"
@@ -34,6 +34,7 @@
     class="list-group-item {{url()->current()==route('todo-post.index')?'active':''}}">
         <i class="fas fa-light fa-solid fa-heart pr-2" style="color: #686b68;"></i><span>みんなのTodo</span>
     </a>
+
 
     @can('admin')
     <a href="{{route('profile.index')}}"
@@ -47,4 +48,5 @@
     class="list-group-item {{url()->current()==route('profile.edit', auth()->user()->id)?'active':''}}">
         <i class="fas fa-id-badge pr-2"></i><span>プロフィール編集</span>
     </a> -->
+
 </div>
