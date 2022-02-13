@@ -45,11 +45,14 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('home') }}">
+                                    <i class="fas fa-home pr-2">
                                     出来事の投稿
+                                    </i>
                                 </a>
-                                <!-- ログアウトバー -->
                                 <a class="dropdown-item" href="{{ route('todo-post.index') }}">
+                                    <i class="fas fa-fire">
                                     Todoの投稿
+                                    </i>
                                 </a>
                             </div>
                         </li>
@@ -60,10 +63,10 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('incident-post.create') }}">
-                                    出来事の新規投稿
+                                    <i class="fas fa-pen-nib pr-2"> 出来事の新規投稿</i>
                                 </a>
                                 <a class="dropdown-item" href="{{ route('todo-post.create') }}">
-                                    Todoの新規投稿
+                                    <i class="fas fa-pen-nib pr-2"> Todoの新規投稿</i>
                                 </a>
                             </div>
                         </li>
@@ -74,10 +77,14 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('home.myPost') }}">
-                                    出来事の投稿
+                                    <i class="fas fa-user-edit pr-2">
+                                        出来事の投稿
+                                    </i>
                                 </a>
                                 <a class="dropdown-item" href="{{ route('home.myPost') }}">
+                                    <i class="fas fa-user-edit pr-2">
                                     Todoの投稿
+                                    </i>
                                 </a>
                             </div>
                         </li>
@@ -88,14 +95,25 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('home.myComment') }}">
-                                    コメントした投稿
+                                    <i class="fas fa-light fa-comments pr-2">
+                                        コメントした投稿
+                                    </i>
                                 </a>
                                 <a class="dropdown-item" href="{{ route('home.myFavorite') }}">
-                                    お気に入りした投稿
+                                    <i class="fas fa-light fa-solid fa-heart">
+                                        お気に入りした投稿
+                                    </i>
                                 </a>
                             </div>
                         </li>
                     </ul>
+                    {{-- 変更すべし --}}
+                    @can('admin')
+                    <a href="{{route('profile.index')}}"
+                    class=" {{url()->current()==route('profile.index')?'active':''}}">
+                        <i class="fas fa-user-edit pr-2" style="color: #686b68;"></i><span>ユーザーアカウント</span>
+                    </a>
+                    @endcan
                     {{-- ここまで追記 --}}
 
                     <!-- Right Side Of Navbar -->
