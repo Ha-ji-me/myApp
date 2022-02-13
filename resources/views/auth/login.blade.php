@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="jumbotron text-gray  d-flex align-items-center"
-style="background:url({{asset('img/top3.jpg')}});background-size:cover;height:300px;">
+style="background:url({{asset('')}});background-size:cover;height:300px;">
     <div class="col-12 col-md-8 col-lg-6 mx-auto">
-        <h2 class="mb-3">駆け出しエンジニアのための情報共有サイト</h2>
+        <h2 class="mb-3" style="text-align: center;">あかぎ</h2>
         <p>ご利用には、会員登録が必要となります。詳しくは下記までお問い合わせください。</p>
         <a href="{{route('contact.create')}}">
             <button class="btn btn-info text-white">お問い合わせ</button>
