@@ -11,7 +11,6 @@
     home
 </div> -->
 
-<!-- <h4>{{$user->name}}さんも投稿を共有しましょう!!</h4> -->
 
 @foreach ($todoPosts as $todoPost)
 <div class="container-fluid mt-20" style="margin-left:-10px;">
@@ -23,7 +22,11 @@
                         <img src="{{asset('storage/avatar/'.($todoPost->user->avatar ?? 'user_default.jpg'))}}"
                         class="rounded-circle" style="width:40px;height:40px;">
                         <!-- タイトル -->
-                        <div class="media-body ml-3"><a href="{{route('todo-post.create',$todoPost)}}">{{$todoPost->title}}</a>
+                        <div class="media-body ml-3">
+                            {{-- <a href="{{route('todo-post.create',$todoPost)}}"> --}}
+                            <a>
+                                {{$todoPost->title}}
+                            </a>
                             <!-- ユーザー名 -->
                             <div class="text-muted small"> {{$todoPost->user->name ?? '削除されたユーザー'}}</div>
                         </div>
@@ -40,19 +43,38 @@
                     <!-- <p>  Str::limit$incidentPost->body,100,'...' </p> -->
                     <p> {!! nl2br(htmlspecialchars(Str::limit($todoPost->body,100,'.........'))) !!}</p>
                 </div>
-                <!-- フッター -->
+                <!-- カードフッター -->
                 <div class="card-footer d-flex flex-wrap justify-content-between align-items-center px-0 pt-0 pb-3">
                     <div class="px-4 pt-3">
-                    <!-- コメント数とアイコンの表示 -->
-                        <!-- 削除しました -->
-                    <!-- いいね数とアイコンの表示 -->
-                        <!-- 削除しました -->
+                    <!-- 完了ボタン -->
+
+                        <!-- <span>
+
+                            <!-- もし$completeTodoがあれば（ユーザーが完了にしていれば） -->
+                            <!-- @if($completeTodo)
+                            <a href="{{ route('uncomplete', $todoPost) }}" class="btn btn-secondary btn-sm">
+                                    <span>
+                                    完了を取り消す -->
+                                    <!-- 「いいね」の数を表示 -->
+
+                                    <!-- </span> -->
+                            <!-- </a>
+                            @else -->
+                            <!-- ユーザーが完了済にしていなければ、ボタン表示 -->
+                            <!-- <a href="{{ route('complete', $todoPost) }}" class="btn btn-danger btn-sm">
+                                    <span>
+                                    完了する
+
+                                    </span>
+                            </a>
+                            @endif
+                        </span> -->
                     </div>
-                    <div class="px-4 pt-3">
+                    <!-- <div class="px-4 pt-3">
                         <button type="button" class="btn btn-primary">
                             <a href="{{route('todo-post.create',$todoPost)}}" style="color:white;">詳細を見る</a>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

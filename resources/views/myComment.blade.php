@@ -26,7 +26,10 @@
                     <div class="media flex-wrap w-100 align-items-center">
                         <img src="{{asset('storage/avatar/'.($incidentPost->user->avatar??'user_default.jpg'))}}"
                         class="rounded-circle" style="width:40px;height:40px;">
-                        <div class="media-body ml-3"><a href="{{route('incident-post.show', $incidentPost)}}">{{$incidentPost->title}}</a>
+                        <div class="media-body ml-3">
+                            <a href="{{route('incident-post.show', $incidentPost)}}" class="text-dark">
+                                {{$incidentPost->title}}
+                            </a>
                             <div class="text-muted small">{{$incidentPost->user->name ?? '削除されたユーザー'}}</div>
                         </div>
                         <div class="text-muted small ml-3">
@@ -71,7 +74,7 @@
 
                     <div class="px-4 pt-3">
                         <button type="button" class="btn btn-primary">
-                            <a href="{{route('incident-post.show', $incidentPost)}}" style="color:white;">コメントする</a>
+                            <a href="{{route('incident-post.show', $incidentPost)}}" style="color:white;">詳細を見る</a>
                         </button> </div>
                 </div>
             </div>
