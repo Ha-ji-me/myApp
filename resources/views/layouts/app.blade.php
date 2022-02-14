@@ -141,7 +141,8 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <!-- プロフィール編集バー追加 -->
                                     <a class="dropdown-item" href="{{ route('profile.edit', auth()->user()->id) }}">
-                                    プロフィール編集
+                                        <i class="fas fa-solid fa-address-card"></i>
+                                        プロフィール編集
                                     </a>
                                     <!-- ログアウトバー -->
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -164,9 +165,10 @@
             @if(Auth::check())
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-4 col-lg-3">
+                    {{-- サイドバーの表示 --}}
+                    {{-- <div class="col-12 col-md-4 col-lg-3">
                     @include('layouts.sidebar')
-                    </div>
+                    </div> --}}
                     <div class="col-12 col-md-8  col-lg-9">
                     <!-- -- エラーメッセージ表示 -- -->
                     <!-- @if ($errors->any())
@@ -178,9 +180,10 @@
                         </ul>
                     </div>
                     @endif -->
-                    @yield('content')
+                    {{-- @yield('content') --}}
                     </div>
                 </div>
+                @yield('content')
             </div>
             @else
             @yield('content')
