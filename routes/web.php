@@ -63,5 +63,10 @@ Route::get('/my-favorite','HomeController@myFavorite')->name('home.myFavorite');
 Route::get('/todo-post','TodoPostController@index')->name('todo-post.index');
 Route::get('/todo-post/create','TodoPostController@create')->name('todo-post.create');
 Route::post('/todo-post/store','TodoPostController@store')->name('todo-post.store');
-
+// Route::post('/todo-post/update','TodoPostController@update')->name('todo-post.update');
+//自分のTodoのみ
+Route::get('/my-todo','TodoPostController@myTodo')->name('todo-post.myPost');
+//Todo完了機能
+Route::get('/reply/complete/{todoPost}', 'CompleteTodoController@completeTodo')->name('complete');
+Route::get('/reply/uncomplete/{todoPost}', 'CompleteTodoController@unCompleteTodo')->name('uncomplete');
 
