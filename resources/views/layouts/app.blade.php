@@ -185,6 +185,7 @@
                     {{-- @yield('content') --}}
                     </div>
                 </div>
+                {{-- メイン（投稿一覧の表示） --}}
                 @yield('content')
             </div>
             @else
