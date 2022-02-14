@@ -81,7 +81,7 @@
                                         出来事の投稿
                                     </i>
                                 </a>
-                                <a class="dropdown-item" href="{{ route('home.myPost') }}">
+                                <a class="dropdown-item" href="{{ route('todo-post.myPost') }}">
                                     <i class="fas fa-user-edit pr-2">
                                     Todoの投稿
                                     </i>
