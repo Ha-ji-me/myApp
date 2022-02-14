@@ -44,12 +44,12 @@
                             みんなの投稿
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('home') }}">
+                                <a class="dropdown-item {{url()->current()==route('home')? 'active' : ''}}" href="{{ route('home') }}">
                                     <i class="fas fa-home pr-2">
                                     出来事の投稿
                                     </i>
                                 </a>
-                                <a class="dropdown-item" href="{{ route('todo-post.index') }}">
+                                <a class="dropdown-item {{url()->current()==route('todo-post.index')?'active':''}}" href="{{ route('todo-post.index') }}">
                                     <i class="fas fa-fire">
                                     Todoの投稿
                                     </i>
@@ -62,10 +62,10 @@
                             新規投稿
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('incident-post.create') }}">
+                                <a class="dropdown-item {{url()->current()==route('incident-post.create')? 'active' : ''}}" href="{{ route('incident-post.create') }}">
                                     <i class="fas fa-pen-nib pr-2"> 出来事の新規投稿</i>
                                 </a>
-                                <a class="dropdown-item" href="{{ route('todo-post.create') }}">
+                                <a class="dropdown-item {{url()->current()==route('todo-post.create')?'active':''}}" href="{{ route('todo-post.create') }}">
                                     <i class="fas fa-pen-nib pr-2"> Todoの新規投稿</i>
                                 </a>
                             </div>
@@ -76,12 +76,12 @@
                             自分の投稿
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('home.myPost') }}">
+                                <a class="dropdown-item {{url()->current()==route('home.myPost')?'active':''}}" href="{{ route('home.myPost') }}">
                                     <i class="fas fa-user-edit pr-2">
-                                        出来事の投稿
+                                    出来事の投稿
                                     </i>
                                 </a>
-                                <a class="dropdown-item" href="{{ route('todo-post.myPost') }}">
+                                <a class="dropdown-item {{url()->current()==route('todo-post.myPost')?'active':''}}" href="{{ route('todo-post.myPost') }}">
                                     <i class="fas fa-user-edit pr-2">
                                     Todoの投稿
                                     </i>
@@ -94,12 +94,12 @@
                             myアクション
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('home.myComment') }}">
+                                <a class="dropdown-item {{url()->current()==route('home.myComment')?'active':''}}" href="{{ route('home.myComment') }}">
                                     <i class="fas fa-light fa-comments pr-2">
                                         コメントした投稿
                                     </i>
                                 </a>
-                                <a class="dropdown-item" href="{{ route('home.myFavorite') }}">
+                                <a class="dropdown-item {{url()->current()==route('home.myFavorite')?'active':''}}" href="{{ route('home.myFavorite') }}">
                                     <i class="fas fa-light fa-solid fa-heart">
                                         お気に入りした投稿
                                     </i>
@@ -148,6 +148,8 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
+                                                    {{-- 表示されない --}}
+                                                    {{-- <i class="fas fa-solid fa-arrow-right-from-bracket"></i> --}}
                                         {{ __('Logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
