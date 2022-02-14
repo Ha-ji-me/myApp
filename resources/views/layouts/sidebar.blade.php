@@ -22,7 +22,7 @@
     <a href="{{route('home.myFavorite')}}"
     class="list-group-item {{url()->current()==route('home.myFavorite')?'active':''}}">
         <i class="fas fa-light fa-solid fa-heart pr-2" style="color: #686b68;"></i><span>お気に入りにした投稿</span>
-    </a> 
+    </a>
 
     <!-- 最後に新規投稿メニューバーの子要素としてまとめる -->
     <a href="{{route('todo-post.create')}}"
