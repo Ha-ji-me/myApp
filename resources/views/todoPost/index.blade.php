@@ -7,11 +7,6 @@
 <div class="alert alert-success">{{session('message')}}</div>
 @endif
 
-<!-- <div class="ml-2 mb-3">
-    home
-</div> -->
-
-
 @foreach ($todoPosts as $todoPost)
 <div class="container-fluid mt-20" style="margin-left:-10px;">
     <div class="row">
