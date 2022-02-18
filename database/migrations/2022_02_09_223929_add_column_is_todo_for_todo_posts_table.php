@@ -14,7 +14,7 @@ class AddColumnIsTodoForTodoPostsTable extends Migration
     public function up()
     {
         Schema::table('todo_posts', function (Blueprint $table) {
-            $table->boolean('isTodo')->default(0);
+            $table->boolean('is_todo')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddColumnIsTodoForTodoPostsTable extends Migration
     public function down()
     {
         Schema::table('todo_posts', function (Blueprint $table) {
-            $table->dropColumn('isTodo');
+            $table->dropColumn('is_todo');
         });
     }
 }
