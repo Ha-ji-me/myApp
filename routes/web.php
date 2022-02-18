@@ -11,15 +11,14 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Auth::routes();
-//トップページ（ログインユーザー移動できず）
-Route::get('/',function(){
-    return view('auth.login');
-})->middleware('guest');
+//トップページ（ログインユーザーは移動できない)->herokuでエラー、コントローラーを使う必要あり
+// Route::get('/',function(){
+//     return view('auth.login');
+// })->middleware('guest');
+//上記を変更
+Route::get('/', 'HomeController@login')->middleware('guest');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
