@@ -5,10 +5,6 @@
 <div class="alert alert-success">{{session('message')}}</div>
 @endif
 
-<!-- <div class="ml-2 mb-3">
-    home
-</div> -->
-
 <!-- <h4>{{$user->name}}さんも投稿を共有しましょう!!</h4> -->
 
 <!-- 検索機能 -->
