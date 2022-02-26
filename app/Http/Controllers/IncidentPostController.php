@@ -23,6 +23,7 @@ class IncidentPostController extends Controller
         $this->middleware('auth');
     }
 
+
     /**
      * Display a listing of the resource.
      *
@@ -83,8 +84,9 @@ class IncidentPostController extends Controller
      */
     public function show(IncidentPost $incidentPost)
     {
+        $user = auth()->user();  //ナビバー部分(app.blade)にユーザーアイコンを渡すため
         $favorite = Favorite::where('incident_post_id', $incidentPost->id)->where('user_id', auth()->user()->id)->first();
-        return view('incidentPost.show',compact('incidentPost', 'favorite'));
+        return view('incidentPost.show',compact('incidentPost', 'favorite', 'user'));
     }
 
     /**
