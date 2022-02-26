@@ -42,68 +42,80 @@
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <!-- みんなの投稿 -->
+                            <i class="fas fa-home pr-2">
                             みんなの投稿
+                            </i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item {{url()->current()==route('home')? 'active' : ''}}" href="{{ route('home') }}">
-                                    <i class="fas fa-home pr-2">
+                                    <!-- <i class="fas fa-home pr-2"> -->
                                     出来事の投稿
-                                    </i>
+                                    <!-- </i> -->
                                 </a>
                                 <a class="dropdown-item {{url()->current()==route('todo-post.index')?'active':''}}" href="{{ route('todo-post.index') }}">
-                                    <i class="fas fa-fire">
+                                    <!-- <i class="fas fa-fire"> -->
                                     Todoの投稿
-                                    </i>
+                                    <!-- </i> -->
                                 </a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <!-- 投稿の作成 -->
-                            新規投稿
+                                <i class="fas fa-pen-nib pr-2">
+                                新規投稿
+                                </i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item {{url()->current()==route('incident-post.create')? 'active' : ''}}" href="{{ route('incident-post.create') }}">
-                                    <i class="fas fa-pen-nib pr-2"> 出来事の新規投稿</i>
+                                    <!-- <i class="fas fa-pen-nib pr-2"> -->
+                                        出来事の新規投稿
+                                    <!-- </i> -->
                                 </a>
                                 <a class="dropdown-item {{url()->current()==route('todo-post.create')?'active':''}}" href="{{ route('todo-post.create') }}">
-                                    <i class="fas fa-pen-nib pr-2"> Todoの新規投稿</i>
+                                    <!-- <i class="fas fa-pen-nib pr-2"> -->
+                                        Todoの新規投稿
+                                    <!-- </i> -->
                                 </a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <!-- 自分の投稿 -->
-                            自分の投稿
+                                <i class="fas fa-user-edit pr-2">
+                                自分の投稿
+                                </i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item {{url()->current()==route('home.myPost')?'active':''}}" href="{{ route('home.myPost') }}">
-                                    <i class="fas fa-user-edit pr-2">
+                                    <!-- <i class="fas fa-user-edit pr-2"> -->
                                     出来事の投稿
-                                    </i>
+                                    <!-- </i> -->
                                 </a>
                                 <a class="dropdown-item {{url()->current()==route('todo-post.myPost')?'active':''}}" href="{{ route('todo-post.myPost') }}">
-                                    <i class="fas fa-user-edit pr-2">
+                                    <!-- <i class="fas fa-user-edit pr-2"> -->
                                     Todoの投稿
-                                    </i>
+                                    <!-- </i> -->
                                 </a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <!-- 自分の投稿 -->
-                            myアクション
+                                <i class="fas fa-light fa-solid fa-heart">
+                                myアクション
+                                </i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item {{url()->current()==route('home.myComment')?'active':''}}" href="{{ route('home.myComment') }}">
-                                    <i class="fas fa-light fa-comments pr-2">
+                                    <!-- <i class="fas fa-light fa-comments pr-2"> -->
                                         コメントした投稿
-                                    </i>
+                                    <!-- </i> -->
                                 </a>
                                 <a class="dropdown-item {{url()->current()==route('home.myFavorite')?'active':''}}" href="{{ route('home.myFavorite') }}">
-                                    <i class="fas fa-light fa-solid fa-heart">
+                                    <!-- <i class="fas fa-light fa-solid fa-heart"> -->
                                         お気に入りした投稿
-                                    </i>
+                                    <!-- </i> -->
                                 </a>
                             </div>
                         </li>
