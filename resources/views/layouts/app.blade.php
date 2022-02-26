@@ -135,11 +135,17 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">
+                                <i class="fas fa-sign-in-alt"></i>
+                                    {{ __('Login') }}
+                                </a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">
+                                    <i class="fas fa-user"></i>
+                                        {{ __('Register') }}
+                                    </a>
                                 </li>
                             @endif
                         @else
@@ -155,16 +161,16 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <!-- プロフィール編集バー追加 -->
                                     <a class="dropdown-item" href="{{ route('profile.edit', auth()->user()->id) }}">
-                                        <i class="fas fa-solid fa-address-card"></i>
+                                        <!-- <i class="fas fa-solid fa-address-card"></i> -->
+                                        <i class="fas fa-user-edit"></i>
                                         プロフィール編集
                                     </a>
                                     <!-- ログアウトバー -->
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                                    {{-- 表示されない --}}
-                                                    {{-- <i class="fas fa-solid fa-arrow-right-from-bracket"></i> --}}
-                                        {{ __('Logout') }}
+                                                    <i class="fas fa-sign-out-alt"></i>
+                                        {{ __('ログアウト') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
