@@ -12,8 +12,8 @@
 </div>
 
 @if (count($todoPosts) == 0)
-<h4>
-あなたはまだ投稿していません。
+<h4 style="text-align: center;">
+＊あなたはまだ投稿していません
 </h4>
 @else
 @foreach ($todoPosts as $todoPost)
