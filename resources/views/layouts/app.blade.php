@@ -36,7 +36,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    {{-- 2月13日追記箇所 --}}
+                    {{-- 追記メニューバー --}}
+                    @if(Auth::check())
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -107,6 +108,7 @@
                             </div>
                         </li>
                     </ul>
+                    @endif
                     {{-- 変更すべし --}}
                     @can('admin')
                     <a href="{{route('profile.index')}}"
