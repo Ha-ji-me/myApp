@@ -10,7 +10,7 @@
 
 @if (count($favorites) == 0)
 <h4 style="text-align: center;">
-＊あなたがお気に入りにした投稿はまだありません。
+＊あなたがお気に入りにした投稿はまだありません
 </h4>
 @else
 @foreach ($favorites->unique('incident_post_id') as $favorite)

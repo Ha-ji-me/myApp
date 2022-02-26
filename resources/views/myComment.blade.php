@@ -10,8 +10,8 @@
 </div>
 
 @if (count($comments) == 0)
-<h4>
-あなたがコメントした投稿はまだありません。
+<h4 style="text-align: center;">
+＊あなたがコメントした投稿はまだありません
 </h4>
 @else
 @foreach ($comments->unique('incident_post_id') as $comment)
