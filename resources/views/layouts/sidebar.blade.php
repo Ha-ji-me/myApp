@@ -50,3 +50,6 @@
     </a> -->
 
 </div>
+<script>
+    console.log('テスト')
+</script>
