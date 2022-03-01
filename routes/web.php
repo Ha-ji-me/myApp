@@ -20,6 +20,7 @@ Auth::routes();
 Route::get('/', 'HomeController@login')->middleware('guest');
 
 Route::get('/home', 'HomeController@index')->name('home');
+dd(Route::get('/home', 'HomeController@index')->name('home'));
 
 //投稿機能関連
 Route::resource('/incident-post', 'IncidentPostController');
