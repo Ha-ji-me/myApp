@@ -18,7 +18,6 @@ class Comment extends Model
     }
 
     public function user(){
-        throw new Exception('ローティングのテスト >>> model');
         return $this->belongsTo('App\Models\user');
     }
 }
