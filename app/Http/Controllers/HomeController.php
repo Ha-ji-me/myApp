@@ -36,6 +36,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        throw new Exception('ローティングのテスト >>> controller');
         // $incidentPosts=IncidentPost::orderBy('created_at','desc')->get(); ペじネーションなしver
         $incidentPosts = IncidentPost::orderBy('created_at','desc')->where(function($query){
             //検索機能

@@ -19,6 +19,7 @@ Auth::routes();
 //上記を変更
 Route::get('/', 'HomeController@login')->middleware('guest');
 
+throw new Exception('ローティングのテスト >>> route');
 Route::get('/home', 'HomeController@index')->name('home');
 
 //投稿機能関連
