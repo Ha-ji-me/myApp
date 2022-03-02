@@ -44,6 +44,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\IncidentPost');
     }
 
+    //コメントと紐づく
     public function comments()
     {
         return $this->hasMany('App\Models\Comment');
