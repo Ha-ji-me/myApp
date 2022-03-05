@@ -7,7 +7,6 @@
         class="rounded-circle" style="width:40px;height:40px;">
         <div class="text-muted small mr-3">
             <!-- ユーザー名 -->
-            
             {{$incidentPost->user->name ?? '削除されたユーザー'}}
         </div>
         <!-- タイトル -->
