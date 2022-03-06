@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Str;
 
+//heroku redisで追加
+if (getenv('REDIS_URL')) {
+    $url = parse_url(getenv('REDIS_URL'));
+    putenv('REDIS_HOST='.$url['host']);
+    putenv('REDIS_PORT='.$url['port']);
+    putenv('REDIS_PASSWORD='.$url['pass']);
+}
+
 return [
 
     /*
@@ -119,10 +127,10 @@ return [
 
     'redis' => [
 
-        'client' => env('REDIS_CLIENT', 'phpredis'),
+        'client' => env('REDIS_CLIENT', 'predis'),
 
         'options' => [
-            'cluster' => env('REDIS_CLUSTER', 'redis'),
+            'cluster' => env('REDIS_CLUSTER', 'predis'),
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
         ],
 
