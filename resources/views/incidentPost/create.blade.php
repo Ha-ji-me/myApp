@@ -26,12 +26,12 @@
             <!-- {{--各項目はold関数で値を残したままエラーを吐きます--}} -->
                 <div class="form-group">
                     <label for="title">タイトル</label>
-                    <input type="text" name="title" class="form-control" id="title" value="{{old('title')}}" placeholder="Enter Title">
+                    <input type="text" name="title" class="form-control" id="title" value="{{old('title')}}" placeholder="ex)) JavaScriptで発生したエラーについて">
                 </div>
 
                 <div class="form-group">
                     <label for="body">内容</label>
-                    <textarea name="body" class="form-control" id="body" cols="30" rows="10">{{old('body')}}</textarea>
+                    <textarea name="body" class="form-control" id="body" cols="30" rows="10" placeholder="ex))&#13;&#10;関数について勉強しているところですが、関数を呼び出すときに以下のようなエラーが出てしまいます。&#13;&#10;このエラーについて何かわかる方がいましたらコメント頂けると幸いです。&#13;&#10;＊必要な場合は「ファイルを選択」からエラー詳細画像を添付してください。">{{old('body')}}</textarea>
                 </div>
 
                 <div class="form-group">
