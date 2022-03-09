@@ -11,15 +11,16 @@ use App\Models\TodoPost;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * 最初に必ずauthを通す
      */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * ログインページへ
+     */
     public function login()
     {
         return view('auth.login');
@@ -32,7 +33,6 @@ class HomeController extends Controller
      * 投稿DBの取得とログインユーザーを取得
      * 新しい順に投稿を表示
      * ペジネーションで投稿表示
-     *
      */
     public function index()
     {
