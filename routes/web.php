@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/welcome','WelcomeController@welcome');
+
 Auth::routes();
 //トップページ（ログインユーザーは移動できない)->herokuでエラー、コントローラーを使う必要あり
 // Route::get('/',function(){
