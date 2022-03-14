@@ -24,6 +24,7 @@
     </form>
 </div>
 
+
 @foreach ($incidentPosts as $incidentPost)
 <div class="container-fluid mt-20" style="margin-left:-10px;">
     <div class="row">
