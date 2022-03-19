@@ -59,6 +59,7 @@ class ProfileController extends Controller
             request()->file('avatar')->storeAs('public/avatar',$avatar);
             $inputs['avatar'] = $avatar;
         }
+        
 
         $user->update($inputs);
         return back()->with('message','情報を更新しました');
