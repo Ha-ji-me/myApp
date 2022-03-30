@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-success">送信する </button>
+                <button type="submit" class="btn btn-success">投稿する </button>
             </form>
         </div>
     </div>
